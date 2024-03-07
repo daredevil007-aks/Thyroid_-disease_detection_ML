@@ -17,7 +17,7 @@ def get_requirements(file_path:str)->List[str]:
 
 setup(
     name='Thyroid_disease_detection',
-    version='0.0.2',
+    version='0.0.1',
     author= 'akshat',
     author_email='chourasiaakshat2@gmail.com',
     install_requires = get_requirements('requirements.txt'),

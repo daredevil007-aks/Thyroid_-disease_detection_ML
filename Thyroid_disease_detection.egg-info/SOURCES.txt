@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+Thyroid_disease_detection.egg-info/PKG-INFO
+Thyroid_disease_detection.egg-info/SOURCES.txt
+Thyroid_disease_detection.egg-info/dependency_links.txt
+Thyroid_disease_detection.egg-info/requires.txt
+Thyroid_disease_detection.egg-info/top_level.txt

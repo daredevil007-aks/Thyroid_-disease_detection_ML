@@ -1,0 +1,8 @@
+[ 2024-04-27 14:20:45,636 ] 23 root - INFO - Data ingestion methods starts
+[ 2024-04-27 14:20:45,664 ] 26 root - INFO - Dataset read as pandas Dataframe
+[ 2024-04-27 14:20:45,729 ] 29 root - INFO - Replaced NAN
+[ 2024-04-27 14:20:45,768 ] 39 root - INFO - stage 2 in EDA
+[ 2024-04-27 14:20:45,800 ] 50 root - INFO - Condition passed
+[ 2024-04-27 14:20:45,835 ] 61 root - INFO - EDA completed performing ingestion
+[ 2024-04-27 14:20:45,926 ] 65 root - INFO - Train Test Split
+[ 2024-04-27 14:20:46,007 ] 71 root - INFO - Ingestion of data completed

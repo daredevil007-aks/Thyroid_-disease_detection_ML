@@ -3,4 +3,6 @@ seaborn
 plotly
 numpy
 scikit-learn
+optuna
+xgboost
 flask

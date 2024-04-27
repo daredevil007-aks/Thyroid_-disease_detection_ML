@@ -9,4 +9,6 @@ Requires-Dist: seaborn
 Requires-Dist: plotly
 Requires-Dist: numpy
 Requires-Dist: scikit-learn
+Requires-Dist: optuna
+Requires-Dist: xgboost
 Requires-Dist: flask

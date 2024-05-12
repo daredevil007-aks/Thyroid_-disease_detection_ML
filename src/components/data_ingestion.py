@@ -57,7 +57,8 @@ class DataIngestion:
             df['FTI'].fillna(df['FTI'].median(), inplace=True)
 
             df['age'].fillna(df['age'].median(), inplace=True)
-
+             
+            df.rename(columns={'on thyroxine': 'on_thyroxine', 'query on thyroxine': 'query_on_thyroxine','on antithyroid medication':'on_antithyroid_medication','thyroid surgery':'thyroid_surgery','I131 treatment':'I131_treatment','query hypothyroid':'query_hypothyroid','query hyperthyroid':'query_hyperthyroid','TSH measured':'TSH_measured','T3 measured':'T3_measured','TT4 measured':'TT4_measured','T4U measured':'T4U_measured','FTI measured':'FTI_measured','TBG measured':'TBG_measured','referral source':'referral_source'}, inplace=True)
             logging.info("EDA completed performing ingestion")
 
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)

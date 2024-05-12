@@ -1,0 +1,7 @@
+[ 2024-05-12 20:18:08,888 ] 23 root - INFO - Data ingestion methods starts
+[ 2024-05-12 20:18:08,920 ] 26 root - INFO - Dataset read as pandas Dataframe
+[ 2024-05-12 20:18:09,008 ] 29 root - INFO - Replaced NAN
+[ 2024-05-12 20:18:09,040 ] 39 root - INFO - stage 2 in EDA
+[ 2024-05-12 20:18:09,088 ] 50 root - INFO - Condition passed
+[ 2024-05-12 20:18:09,124 ] 62 root - INFO - EDA completed performing ingestion
+[ 2024-05-12 20:18:09,124 ] 80 root - INFO - Exception occured at data ingestion stage

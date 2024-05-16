@@ -1,0 +1,30 @@
+[ 2024-05-15 16:05:49,624 ] 25 root - INFO - Data ingestion methods starts
+[ 2024-05-15 16:05:49,650 ] 28 root - INFO - Dataset read as pandas Dataframe
+[ 2024-05-15 16:05:49,678 ] 31 root - INFO - Replaced NAN
+[ 2024-05-15 16:05:49,710 ] 41 root - INFO - stage 2 in EDA
+[ 2024-05-15 16:05:49,734 ] 52 root - INFO - Condition passed
+[ 2024-05-15 16:05:49,776 ] 64 root - INFO - EDA completed performing ingestion
+[ 2024-05-15 16:05:49,863 ] 68 root - INFO - Train Test Split
+[ 2024-05-15 16:05:49,910 ] 74 root - INFO - Ingestion of data completed
+[ 2024-05-15 16:05:49,960 ] 96 root - INFO - Read train and test data completed
+[ 2024-05-15 16:05:49,983 ] 97 root - INFO - Train Dataframe Head: 
+    age sex on_thyroxine query_on_thyroxine on_antithyroid_medication sick pregnant thyroid_surgery I131_treatment query_hypothyroid query_hyperthyroid lithium goitre tumor hypopituitary psych TSH_measured    TSH T3_measured   T3 TT4_measured    TT4 T4U_measured   T4U FTI_measured    FTI TBG_measured referral_source binaryClass
+0  37.0   F            f                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t   0.09           t  2.2            t  128.0            t  0.75            t  172.0            f           other           P
+1  31.0   M            f                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t   5.10           f  2.0            t   93.0            t  0.97            t   95.0            f           other           P
+2  21.0   F            f                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            f   1.40           t  1.8            t  163.0            t  1.05            t  155.0            f           other           P
+3  34.0   F            f                  f                         t    f        t               f              f                 f                  f       f      f     f             f     f            t   0.02           t  3.7            t  182.0            t  1.75            t  104.0            f            STMW           P
+4  34.0   F            f                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t  82.00           t  0.2            t    5.8            f  0.98            f  107.0            f             SVI           N
+[ 2024-05-15 16:05:49,993 ] 98 root - INFO - Test Dataframe Head: 
+    age sex on_thyroxine query_on_thyroxine on_antithyroid_medication sick pregnant thyroid_surgery I131_treatment query_hypothyroid query_hyperthyroid lithium goitre tumor hypopituitary psych TSH_measured    TSH T3_measured   T3 TT4_measured    TT4 T4U_measured   T4U FTI_measured    FTI TBG_measured referral_source binaryClass
+0  54.0   F            t                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t   0.93           t  1.8            t  115.0            t  0.94            t  123.0            f           other           P
+1  47.0   F            f                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t   3.00           t  1.4            t  159.0            t  0.95            t  166.0            f             SVI           P
+2  58.0   F            t                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t   5.40           t  1.6            t  105.0            f  0.98            f  107.0            f           other           P
+3  68.0   M            f                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t  15.00           t  2.0            t   81.0            t  1.01            t   81.0            f           other           N
+4  83.0   F            f                  f                         f    f        f               f              f                 f                  f       f      f     f             f     f            t   0.92           t  0.9            t   86.0            t  0.76            t  113.0            f             SVI           P
+[ 2024-05-15 16:05:49,994 ] 100 root - INFO - obtaining preprocessing object
+[ 2024-05-15 16:05:49,994 ] 28 root - INFO - Data Transformation Initiated
+[ 2024-05-15 16:05:49,994 ] 56 root - INFO - Pipeline initiated
+[ 2024-05-15 16:05:49,994 ] 83 root - INFO - pipeline completed
+[ 2024-05-15 16:05:50,103 ] 116 root - INFO - applying preprocessing object on training and testing datasets
+[ 2024-05-15 16:05:50,107 ] 126 root - INFO - preprocessor pickle file saved
+[ 2024-05-15 16:05:50,107 ] 136 root - INFO - Exception occured in the initiate data tranformation

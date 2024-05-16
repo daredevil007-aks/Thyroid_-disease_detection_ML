@@ -1,0 +1,108 @@
+[ 2024-05-15 18:16:57,343 ] 96 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.160:5000
+[ 2024-05-15 18:16:57,344 ] 96 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-05-15 18:17:04,361 ] 125 root - INFO - Dataframe Gathered
+[ 2024-05-15 18:17:04,835 ] 27 root - INFO - Exception occured in prediction
+[ 2024-05-15 18:17:04,835 ] 828 app - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 22, in predict
+    data_scaled=preprocessor.transform(features)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\_set_output.py", line 295, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\compose\_column_transformer.py", line 1014, in transform
+    Xs = self._call_func_on_transformers(
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\compose\_column_transformer.py", line 823, in _call_func_on_transformers
+    return Parallel(n_jobs=self.n_jobs)(jobs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\parallel.py", line 67, in __call__
+    return super().__call__(iterable_with_config)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\joblib\parallel.py", line 1863, in __call__
+    return output if self.return_generator else list(output)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\joblib\parallel.py", line 1792, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\parallel.py", line 129, in __call__
+    return self.function(*args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\pipeline.py", line 1283, in _transform_one
+    res = transformer.transform(X, **params.transform)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\pipeline.py", line 905, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\_set_output.py", line 295, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\preprocessing\_encoders.py", line 1577, in transform
+    X_int, X_mask = self._transform(
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\preprocessing\_encoders.py", line 213, in _transform
+    raise ValueError(msg)
+ValueError: Found unknown categories [None] in column 8 during transform
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\ML\Thyroid_-disease_detection_ML\app.py", line 52, in predict_datapoint
+    pred = predict_pipeline.predict(final_new_data)
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 28, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occued in python script name [0] line number [1] error message [2]
+[ 2024-05-15 18:17:04,990 ] 96 werkzeug - INFO - 127.0.0.1 - - [15/May/2024 18:17:04] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[ 2024-05-15 18:17:40,931 ] 96 werkzeug - INFO - 192.168.29.160 - - [15/May/2024 18:17:40] "GET / HTTP/1.1" 200 -
+[ 2024-05-15 18:17:41,237 ] 96 werkzeug - INFO - 192.168.29.160 - - [15/May/2024 18:17:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2024-05-15 18:17:55,834 ] 96 werkzeug - INFO - 192.168.29.160 - - [15/May/2024 18:17:55] "GET / HTTP/1.1" 200 -
+[ 2024-05-15 18:17:56,267 ] 96 werkzeug - INFO - 192.168.29.160 - - [15/May/2024 18:17:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2024-05-15 18:18:11,653 ] 96 werkzeug - INFO - 192.168.29.160 - - [15/May/2024 18:18:11] "GET /predict HTTP/1.1" 200 -
+[ 2024-05-15 18:18:30,176 ] 125 root - INFO - Dataframe Gathered
+[ 2024-05-15 18:18:30,201 ] 27 root - INFO - Exception occured in prediction
+[ 2024-05-15 18:18:30,201 ] 828 app - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 22, in predict
+    data_scaled=preprocessor.transform(features)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\_set_output.py", line 295, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\compose\_column_transformer.py", line 1014, in transform
+    Xs = self._call_func_on_transformers(
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\compose\_column_transformer.py", line 823, in _call_func_on_transformers
+    return Parallel(n_jobs=self.n_jobs)(jobs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\parallel.py", line 67, in __call__
+    return super().__call__(iterable_with_config)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\joblib\parallel.py", line 1863, in __call__
+    return output if self.return_generator else list(output)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\joblib\parallel.py", line 1792, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\parallel.py", line 129, in __call__
+    return self.function(*args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\pipeline.py", line 1283, in _transform_one
+    res = transformer.transform(X, **params.transform)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\pipeline.py", line 905, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\utils\_set_output.py", line 295, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\preprocessing\_encoders.py", line 1577, in transform
+    X_int, X_mask = self._transform(
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\sklearn\preprocessing\_encoders.py", line 213, in _transform
+    raise ValueError(msg)
+ValueError: Found unknown categories [None] in column 8 during transform
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\ML\Thyroid_-disease_detection_ML\app.py", line 52, in predict_datapoint
+    pred = predict_pipeline.predict(final_new_data)
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 28, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occued in python script name [0] line number [1] error message [2]
+[ 2024-05-15 18:18:30,202 ] 96 werkzeug - INFO - 192.168.29.160 - - [15/May/2024 18:18:30] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -

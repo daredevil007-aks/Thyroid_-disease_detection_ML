@@ -1,0 +1,31 @@
+[ 2024-05-15 16:48:57,792 ] 96 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.160:5000
+[ 2024-05-15 16:48:57,792 ] 96 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-05-15 16:49:50,997 ] 96 werkzeug - INFO - 127.0.0.1 - - [15/May/2024 16:49:50] "GET / HTTP/1.1" 200 -
+[ 2024-05-15 16:49:54,714 ] 96 werkzeug - INFO - 127.0.0.1 - - [15/May/2024 16:49:54] "GET /predict HTTP/1.1" 200 -
+[ 2024-05-15 16:50:11,156 ] 129 root - INFO - Exception Occured in prediction pipeline
+[ 2024-05-15 16:50:11,156 ] 828 app - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 121, in get_data_as_dataframe
+    'referral_source':[self.referral_sourc]
+AttributeError: 'CustomData' object has no attribute 'referral_sourc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\ML\Thyroid_-disease_detection_ML\thy\lib\site-packages\flask-3.0.2-py3.10.egg\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "E:\ML\Thyroid_-disease_detection_ML\app.py", line 50, in predict_datapoint
+    final_new_data = data.get_data_as_dataframe()
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 130, in get_data_as_dataframe
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occued in python script name [0] line number [1] error message [2]
+[ 2024-05-15 16:50:11,161 ] 96 werkzeug - INFO - 127.0.0.1 - - [15/May/2024 16:50:11] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -

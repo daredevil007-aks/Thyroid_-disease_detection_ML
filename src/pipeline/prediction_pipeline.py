@@ -118,7 +118,7 @@ class CustomData:
                 'FTI_measured':[self.FTI_measured],
                 'FTI':[self.FTI],
                 'TBG_measured':[self.TBG_measured],
-                'referral_source':[self.referral_sourc]
+                'referral_source':[self.referral_source]
             }
             
             df = pd.DataFrame(custom_data_input_dict)

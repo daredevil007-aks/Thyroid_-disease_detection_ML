@@ -1,0 +1,83 @@
+[ 2024-05-16 03:35:09,116 ] 96 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.160:5000
+[ 2024-05-16 03:35:09,116 ] 96 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-05-16 03:35:16,660 ] 131 root - INFO - Dataframe Gathered
+[ 2024-05-16 03:35:16,673 ] 53 root - INFO - Test Dataframe Head: 
+    age sex on_thyroxine query_on_thyroxine on_antithyroid_medication sick pregnant thyroid_surgery I131_treatment query_hypothyroid query_hyperthyroid lithium goitre tumor hypopituitary psych TSH_measured   TSH T3_measured    T3 TT4_measured  TT4 T4U_measured  T4U FTI_measured  FTI TBG_measured referral_source
+0  25.0   F            t                  t                         t    t        t               t              t              None                  t       t      t     t             t     t            t  10.0           t  10.0            t  4.0            t  4.0            t  4.0            f            SVHC
+[ 2024-05-16 03:35:16,933 ] 28 root - INFO - Exception Occured in load_object function
+[ 2024-05-16 03:35:16,934 ] 33 root - INFO - Exception occured in prediction
+[ 2024-05-16 03:35:16,934 ] 1414 app - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\src\utils.py", line 25, in load_object
+    return pickle.load(file_obj)
+TypeError: __randomstate_ctor() takes from 0 to 1 positional arguments but 2 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 23, in predict
+    model = load_object(model_path)
+  File "E:\ML\Thyroid_-disease_detection_ML\src\utils.py", line 29, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occued in python script name [0] line number [1] error message [2]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "E:\ML\Thyroid_-disease_detection_ML\app.py", line 55, in predict_datapoint
+    pred = predict_pipeline.predict(final_new_data)
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 34, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occued in python script name [0] line number [1] error message [2]
+[ 2024-05-16 03:35:16,938 ] 96 werkzeug - INFO - 192.168.29.160 - - [16/May/2024 03:35:16] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[ 2024-05-16 03:35:30,739 ] 96 werkzeug - INFO - 192.168.29.160 - - [16/May/2024 03:35:30] "GET / HTTP/1.1" 200 -
+[ 2024-05-16 03:35:34,576 ] 96 werkzeug - INFO - 192.168.29.160 - - [16/May/2024 03:35:34] "GET /predict HTTP/1.1" 200 -
+[ 2024-05-16 03:35:48,445 ] 131 root - INFO - Dataframe Gathered
+[ 2024-05-16 03:35:48,453 ] 53 root - INFO - Test Dataframe Head: 
+    age sex on_thyroxine query_on_thyroxine on_antithyroid_medication sick pregnant thyroid_surgery I131_treatment query_hypothyroid query_hyperthyroid lithium goitre tumor hypopituitary psych TSH_measured   TSH T3_measured    T3 TT4_measured  TT4 T4U_measured  T4U FTI_measured  FTI TBG_measured referral_source
+0  25.0   F            t                  t                         t    t        t               t              t              None                  t       t      t     t             t     t            t  10.0           t  10.0            t  4.0            t  4.0            t  4.0            f            SVHC
+[ 2024-05-16 03:35:48,473 ] 28 root - INFO - Exception Occured in load_object function
+[ 2024-05-16 03:35:48,473 ] 33 root - INFO - Exception occured in prediction
+[ 2024-05-16 03:35:48,473 ] 1414 app - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\src\utils.py", line 25, in load_object
+    return pickle.load(file_obj)
+TypeError: __randomstate_ctor() takes from 0 to 1 positional arguments but 2 were given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 23, in predict
+    model = load_object(model_path)
+  File "E:\ML\Thyroid_-disease_detection_ML\src\utils.py", line 29, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occued in python script name [0] line number [1] error message [2]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python310\lib\site-packages\flask-2.3.2-py3.10.egg\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "E:\ML\Thyroid_-disease_detection_ML\app.py", line 55, in predict_datapoint
+    pred = predict_pipeline.predict(final_new_data)
+  File "E:\ML\Thyroid_-disease_detection_ML\src\pipeline\prediction_pipeline.py", line 34, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occued in python script name [0] line number [1] error message [2]
+[ 2024-05-16 03:35:48,474 ] 96 werkzeug - INFO - 192.168.29.160 - - [16/May/2024 03:35:48] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -

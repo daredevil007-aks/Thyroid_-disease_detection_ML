@@ -20,14 +20,13 @@ from src.logger import logging
 from src.utils import save_object
 from src.exception import CustomException
 from dataclasses import dataclass
-from src.utils import evaluate_model
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import RandomizedSearchCV
 from scipy.stats import randint
 
 @dataclass
 class ModelTrainerConfig:
-    trained_model_file_path = os.path.joi('artifacts','model.pkl')
+    trained_model_file_path = os.path.join('artifacts','model.pkl')
 
 class ModelTrainer:
     def __init__(self):

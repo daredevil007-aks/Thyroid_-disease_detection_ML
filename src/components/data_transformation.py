@@ -119,7 +119,7 @@ class DataTransformation:
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 
             save_object(
-                file_path = self.data_tranformation_config.preprocessor_obj_file_path,
+                file_path = self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
             )
 
@@ -128,7 +128,7 @@ class DataTransformation:
             return (
                 train_arr,
                 test_arr,
-                self.data_tranformation_config.preprocessor_obj_file_path
+                self.data_transformation_config.preprocessor_obj_file_path
             )
             preprocessing_obj = self.get_data_transformation_object()
 

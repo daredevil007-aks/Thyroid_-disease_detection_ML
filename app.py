@@ -1,4 +1,5 @@
 import logging
+from turtle import position
 from webbrowser import get
 from flask import Flask, request,render_template, jsonify
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
@@ -17,6 +18,8 @@ def predict_datapoint():
         return render_template('form.html')
 
     else:
+        Positive = "Positive"
+        Negative = "Negative"
         data=CustomData(
            age = float(request.form.get('age')),
            sex = request.form.get('sex'),
@@ -53,6 +56,12 @@ def predict_datapoint():
         logging.info(f'Test Dataframe Head: \n{final_new_data.head().to_string()}')
         predict_pipeline = PredictPipeline()
         pred = predict_pipeline.predict(final_new_data)
+        
+        if round(pred[0], 3) > 0.8:
+            pred = Positive
+
+        else:
+            pred = Negative
 
         results = pred
 
